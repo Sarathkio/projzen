@@ -3563,3 +3563,41 @@ section,
     height: 1.5rem;
   }
 }
+
+
+
+
+.chat-with-us {
+  position: fixed; 
+  bottom: 12%;    
+  right: 15px;     
+  z-index: 1000;   
+  background-color: #25D366; 
+  padding: 10px;   
+  border-radius: 50%; 
+  box-shadow: 0 2px 10px rgba(77, 18, 113, 0.2);
+  width: 50px;     
+  height: 50px;    
+  display: flex;   
+  justify-content: center; 
+  align-items: center; 
+  transition: background-color 0.3s; 
+}
+
+.whatsapp-text {
+    font-size: 16px; /* Adjust text size */
+}
+.chat-with-us:hover {
+  background-color: #128C7E; 
+}
+
+.whatsapp-link {
+  color: white; 
+  text-decoration: none; 
+  text-align: center; 
+}
+
+.whatsapp-icon {
+  font-size: 24px; 
+}
+
