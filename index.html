@@ -16,7 +16,6 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <meta name="google-site-verification" content="14D9HvYsf6qVjJvYs5SXFnjrwS8baRt2wRCTjATAK80" />
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -26,48 +25,6 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <style>
-    
-.chat-with-us {
-  position: fixed; 
-  bottom: 12%;    
-  right: 15px;     
-  z-index: 1000;   
-  background-color: #25D366; 
-  padding: 10px;   
-  border-radius: 50%; 
-  box-shadow: 0 2px 10px rgba(77, 18, 113, 0.2);
-  width: 50px;     
-  height: 50px;    
-  display: flex;   
-  justify-content: center; 
-  align-items: center; 
-  transition: background-color 0.3s; 
-}
-
-.whatsapp-text {
-    font-size: 16px; /* Adjust text size */
-}
-.chat-with-us:hover {
-  background-color: #128C7E; 
-}
-
-.whatsapp-link {
-  color: white; 
-  text-decoration: none; 
-  text-align: center; 
-}
-
-.whatsapp-icon {
-  font-size: 24px; 
-}
-
-
-  </style>
-
-
-
 </head>
 
 <body class="index-page">
@@ -233,7 +190,7 @@
                   <p>Years of Expertise</p>
                 </div>
                 <div class="stats-item">
-                  <h3>9+</h3>
+                  <h3>46+</h3>
                   <p>Happy Clients</p>
                 </div>
               </div>
@@ -816,44 +773,36 @@
             <p>Fill out the form and we’ll get back to you as soon as possible.</p>
           </div>
 
-          <!-- Form -->
-          <form id="contact-form" class="php-email-form">
-            <div class="row">
-              <!-- Name Field -->
-              <div class="col-md-6 mb-3">
-                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-              </div>
+         <form id="contact-form">
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+    </div>
+  </div>
 
-              <!-- Email Field -->
-              <div class="col-md-6 mb-3">
-                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-              </div>
-            </div>
+  <div class="mb-3">
+    <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+  </div>
 
-            <!-- Subject Field -->
-            <div class="mb-3">
-              <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-            </div>
+  <div class="mb-4">
+    <textarea name="message" class="form-control" rows="4" placeholder="Your Message..." required></textarea>
+  </div>
 
-            <!-- Message Field -->
-            <div class="mb-4">
-              <textarea name="message" class="form-control" rows="4" placeholder="Your Message..." required></textarea>
-            </div>
+  <div class="my-3">
+    <div class="loading" style="display:none;">Sending...</div>
+    <div class="error-message text-danger"></div>
+    <div class="sent-message text-success" style="display:none;">Your message has been sent. Thank you!</div>
+  </div>
 
-            <!-- Form Messages -->
-            <div class="my-3">
-              <div class="loading">Sending...</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
+  <button type="submit" class="submit-btn btn btn-primary w-100">
+    <span>Send Message</span>
+    <i class="bi bi-send-fill"></i>
+  </button>
+</form>
 
-            <!-- Submit Button -->
-            <button type="submit" class="submit-btn">
-              <span>Send Message</span>
-              <i class="bi bi-send-fill"></i>
-            </button>
-          </form>
-          <!-- End Form -->
 
         </div>
       </div>
@@ -940,15 +889,6 @@
   </div>
 </section>
 <!-- /Contact Section -->
-  
- <!--Whatsapp Chat Section-->
-  <div class="chat-with-us">
-    <a href="https://wa.me/9843424536" target="_blank" class="whatsapp-link">
-        <i class="bi bi-whatsapp whatsapp-icon"></i>
-        <span class="whatsapp-text"></span>
-    </a>
-  </div>
-   <!--/Whatsapp Chat Section-->
 
 </main>
 

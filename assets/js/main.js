@@ -227,9 +227,8 @@ document.addEventListener("DOMContentLoaded", function () {
   } 
 });
 
-
 document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('.php-email-form');
+  const form = document.getElementById('contact-form'); // changed from querySelector('.php-email-form')
 
   form.addEventListener('submit', function (e) {
     e.preventDefault(); // Prevent default form submission
@@ -258,4 +257,13 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 });
+
+
+
+
+
+
+
+
+
 

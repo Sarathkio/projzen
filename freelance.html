@@ -25,6 +25,11 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+
+<script src="https://cdn.emailjs.com/sdk/3.12.0/email.min.js"></script>
+
+
 </head>
 
 <body class="index-page">
@@ -190,29 +195,32 @@
 
         </div>
 
-         <!-- Contact Form -->
           <div class="inquiry-form">
             <h4>Get a Quote</h4>
-            <form action="forms/get-a-quote.php" method="post" class="php-email-form">
+            <form id="get-quote">
               <div class="form-group mb-3">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
               </div>
               <div class="form-group mb-3">
-                <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required="">
+                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
               </div>
               <div class="form-group mb-3">
-                <input type="tel" name="phone" class="form-control" id="phone" placeholder="Your Phone">
+                <input type="tel" name="phone" class="form-control" placeholder="Your Phone">
               </div>
-              <input type="hidden" name="subject" value="Freelance Development Quote Request">
               <div class="form-group mb-4">
-                <textarea class="form-control" name="message" rows="5" placeholder="Tell us about your project requirements..." required=""></textarea>
+                <textarea class="form-control" name="message" rows="5" placeholder="Tell us about your project requirements..." required></textarea>
               </div>
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
+
+              <div class="loading" style="display:none;">Sending...</div>
+              <div class="error-message" style="color:red;"></div>
+              <div class="sent-message" style="display:none; color:green;">Your message has been sent. Thank you!</div>
+
               <button type="submit" class="btn-submit w-100">Request Quote</button>
             </form>
           </div>
+
+
+
 
       </div><!-- End Sidebar -->
     </div>
@@ -220,16 +228,6 @@
 
 </section><!-- /Service Details Section -->
 
-
-  <!--Whatsapp Chat Section-->
-  <div class="chat-with-us">
-    <a href="https://wa.me/9843424536" target="_blank" class="whatsapp-link">
-        <i class="bi bi-whatsapp whatsapp-icon"></i>
-        <span class="whatsapp-text"></span>
-    </a>
-  </div>
-   <!--/Whatsapp Chat Section-->
-    
   </main>
 
  <footer id="footer" class="footer position-relative dark-background">
@@ -334,6 +332,56 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function() {
+        emailjs.init('nD2uh99F-Z7z6lrbn'); // Replace with your EmailJS public key
+      })();
+    </script>
+
+<script>
+ document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('get-quote');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const loading = form.querySelector('.loading');
+    const errorMsg = form.querySelector('.error-message');
+    const sentMsg = form.querySelector('.sent-message');
+
+    loading.style.display = 'block';
+    errorMsg.style.display = 'none';
+    sentMsg.style.display = 'none';
+
+    emailjs.sendForm('service_nge6w3i', 'template_3ie528t', form)
+      .then(() => {
+        loading.style.display = 'none';
+        sentMsg.style.display = 'block';
+        sentMsg.style.opacity = 1; // ensure it’s visible
+        form.reset();
+
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          sentMsg.style.opacity = 0;
+          sentMsg.style.display = 'none';
+        }, 5000);
+      })
+      .catch(err => {
+        loading.style.display = 'none';
+        errorMsg.style.display = 'block';
+        errorMsg.innerText = 'Something went wrong. Please try again later.';
+        console.error(err);
+      });
+  });
+});
+
+</script>
+
+
+
 
 </body>
 
