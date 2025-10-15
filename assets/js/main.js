@@ -261,6 +261,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+// Elements
+const adOverlay = document.getElementById('advertisement-overlay');
+const closeBtn = document.getElementById('closeAd');
+
+// Show advertisement on page load
+window.addEventListener('load', () => {
+  adOverlay.classList.add('show');
+});
+
+// Close advertisement with fade-out
+closeBtn.addEventListener('click', () => {
+  adOverlay.classList.remove('show');
+});
+
+// Optional: close when clicking outside the image
+adOverlay.addEventListener('click', (e) => {
+  if (e.target === adOverlay) {
+    adOverlay.classList.remove('show');
+  }
+});
 
 
 
